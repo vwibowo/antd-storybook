@@ -1,5 +1,5 @@
 
-import { Canvas, Meta,Source } from '@storybook/blocks';
+import { Canvas, Meta, Source } from '@storybook/blocks';
 import * as InputNumberStories from './InputNumber.stories';
 
 <Meta of={InputNumberStories} />
@@ -40,12 +40,12 @@ Common props ref：[Common props](/docs/react/common-props)
 | autoFocus | If get focus when component mounted | boolean | false | - |
 | changeOnBlur | Trigger `onChange` when blur. e.g. reset value in range by blur | boolean | true | 5.11.0 |
 | changeOnWheel | Allow control with mouse wheel | boolean | - | 5.14.0 |
-| controls | Whether to show `+-` controls, or set custom arrows icon | boolean \| { upIcon?: React.ReactNode; downIcon?: React.ReactNode; } | - | 4.19.0 |
+| controls | Whether to show `+-` controls, or set custom arrows icon | boolean \| \{ upIcon?: React.ReactNode; downIcon?: React.ReactNode; } | - | 4.19.0 |
 | decimalSeparator | Decimal separator | string | - | - |
 | placeholder | placeholder | string | - |  |
 | defaultValue | The initial value | number | - | - |
 | disabled | If disable the input | boolean | false | - |
-| formatter | Specifies the format of the value presented | function(value: number \| string, info: { userTyping: boolean, input: string }): string | - | info: 4.17.0 |
+| formatter | Specifies the format of the value presented | function(value: number \| string, info: \{ userTyping: boolean, input: string }): string | - | info: 4.17.0 |
 | keyboard | If enable keyboard behavior | boolean | true | 4.12.0 |
 | max | The max value | number | [Number.MAX_SAFE_INTEGER](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/MAX_SAFE_INTEGER) | - |
 | min | The min value | number | [Number.MIN_SAFE_INTEGER](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/MIN_SAFE_INTEGER) | - |
@@ -62,19 +62,19 @@ Common props ref：[Common props](/docs/react/common-props)
 | variant | Variants of Input | `outlined` \| `borderless` \| `filled` \| `underlined` | `outlined` | 5.13.0 \| `underlined`: 5.24.0 |
 | onChange | The callback triggered when the value is changed | function(value: number \| string \| null) | - | - |
 | onPressEnter | The callback function that is triggered when Enter key is pressed | function(e) | - | - |
-| onStep | The callback function that is triggered when click up or down buttons | (value: number, info: { offset: number, type: 'up' \| 'down' }) => void | - | 4.7.0 |
+| onStep | The callback function that is triggered when click up or down buttons | (value: number, info: \{ offset: number, type: 'up' \| 'down' }) => void | - | 4.7.0 |
 
 ## Ref
 
 | Name | Description | Type | Version |
 | --- | --- | --- | --- |
 | blur() | Remove focus | - |  |
-| focus() | Get focus | (option?: { preventScroll?: boolean, cursor?: 'start' \| 'end' \| 'all' }) | cursor - 5.22.0 |
+| focus() | Get focus | (option?: \{ preventScroll?: boolean, cursor?: 'start' \| 'end' \| 'all' }) | cursor - 5.22.0 |
 | nativeElement | The native DOM element | - | 5.17.3 |
 
 ## Design Token
 
-<ComponentTokenTable component="InputNumber"></ComponentTokenTable>
+``` <ComponentTokenTable component="InputNumber"></ComponentTokenTable>
 
 ## Notes
 

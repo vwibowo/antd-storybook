@@ -1,5 +1,5 @@
 
-import { Canvas, Meta,Source } from '@storybook/blocks';
+import { Canvas, Meta, Source } from '@storybook/blocks';
 import * as CollapseStories from './Collapse.stories';
 
 <Meta of={CollapseStories} />
@@ -10,7 +10,7 @@ import * as CollapseStories from './Collapse.stories';
 - Can be used to group or hide complex regions to keep the page clean.
 - `Accordion` is a special kind of `Collapse`, which allows only one panel to be expanded at a time.
 
-```tsx | pure
+```tsx
 // works when >= 5.6.0, recommended ✅
 const text = `
   A dog is a type of domesticated animal.
@@ -37,8 +37,6 @@ const items: CollapseProps['items'] = [
 ];
 
 <Collapse items={items} defaultActiveKey={['1']} />;
-
-// works when <5.6.0 , deprecated when >=5.6.0  🙅🏻‍♀️
 
 <Collapse defaultActiveKey={['1']} onChange={onChange}>
   <Panel header="This is panel header 1" key="1">
@@ -76,10 +74,10 @@ Common props ref：[Common props](/docs/react/common-props)
 | Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
 | accordion | If true, Collapse renders as Accordion | boolean | false |  |
-| activeKey | Key of the active panel | string\[] \| string <br/> number\[] \| number | No default value. In [accordion mode](#collapse-demo-accordion), it's the key of the first panel |  |
+| activeKey | Key of the active panel | string[] \| string <br/> number[] \| number | No default value. In [accordion mode](#collapse-demo-accordion), it's the key of the first panel |  |
 | bordered | Toggles rendering of the border around the collapse block | boolean | true |  |
 | collapsible | Specify how to trigger Collapse. Either by clicking icon or by clicking any area in header or disable collapse functionality itself | `header` \| `icon` \| `disabled` | - | 4.9.0 |
-| defaultActiveKey | Key of the initial active panel | string\[] \| string <br/> number\[] \| number | - |  |
+| defaultActiveKey | Key of the initial active panel | string[] \| string <br/> number[] \| number | - |  |
 | destroyInactivePanel | Destroy Inactive Panel | boolean | false |  |
 | expandIcon | Allow to customize collapse icon | (panelProps) => ReactNode | - |  |
 | expandIconPosition | Set expand icon position | `start` \| `end` | - | 4.21.0 |
@@ -104,10 +102,6 @@ Common props ref：[Common props](/docs/react/common-props)
 
 ### Collapse.Panel
 
-:::info{title=Deprecated}
-When using version >= 5.6.0, we prefer to configuring the panel by `items`.
-:::
-
 | Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
 | collapsible | Specify whether the panel be collapsible or the trigger area of collapsible | `header` \| `icon` \| `disabled` | - | 4.9.0 (icon: 4.24.0) |
@@ -123,5 +117,5 @@ When using version >= 5.6.0, we prefer to configuring the panel by `items`.
 
 ## Design Token
 
-<ComponentTokenTable component="Collapse"></ComponentTokenTable>
+``` <ComponentTokenTable component="Collapse"></ComponentTokenTable>
 

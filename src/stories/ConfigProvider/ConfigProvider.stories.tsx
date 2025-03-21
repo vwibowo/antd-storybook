@@ -8,7 +8,6 @@ import DemoUseConfigComp from "./useConfig";
 import DemoPrefixClsComp from "./prefixCls";
 import DemoHolderRenderComp from "./holderRender";
 import DemoThemeComp from "./theme";
-import DemoWaveComp from "./wave";
 import DemoLocaleComp from "./locale";
 
 const meta = {
@@ -21,37 +20,33 @@ type Story = StoryObj<any>;
 
 
 export const Demo_size: Story = {
-  render: (p:any) => <DemoSizeComp {...p} />
+  render: (p: any) => <DemoSizeComp {...p} />
 };
 
 export const Demo_direction: Story = {
-  render: (p:any) => <DemoDirectionComp {...p} />
+  render: (p: any) => <DemoDirectionComp {...p} />
 };
 
 export const Demo_warning: Story = {
-  render: (p:any) => <DemoWarningComp {...p} />
+  render: (p: any) => <DemoWarningComp {...p} />
 };
 
 export const Demo_useConfig: Story = {
-  render: (p:any) => <DemoUseConfigComp {...p} />
+  render: (p: any) => <DemoUseConfigComp {...p} />
 };
 
 export const Demo_prefixCls: Story = {
-  render: (p:any) => <DemoPrefixClsComp {...p} />
+  render: (p: any) => <DemoPrefixClsComp {...p} />
 };
 
 export const Demo_holderRender: Story = {
-  render: (p:any) => <DemoHolderRenderComp {...p} />
+  render: (p: any) => <DemoHolderRenderComp {...p} />
 };
 
 export const Demo_theme: Story = {
-  render: (p:any) => <DemoThemeComp {...p} />
-};
-
-export const Demo_wave: Story = {
-  render: (p:any) => <DemoWaveComp {...p} />
+  render: (p: any) => <DemoThemeComp {...p} />
 };
 
 export const Demo_locale: Story = {
-  render: (p:any) => <DemoLocaleComp {...p} />
+  render: (p: any) => <DemoLocaleComp {...p} />
 };

@@ -1,5 +1,5 @@
 
-import { Canvas, Meta,Source } from '@storybook/blocks';
+import { Canvas, Meta, Source } from '@storybook/blocks';
 import * as AlertStories from './Alert.stories';
 
 <Meta of={AlertStories} />
@@ -34,7 +34,7 @@ Common props ref：[Common props](/docs/react/common-props)
 | action | The action of Alert | ReactNode | - | 4.9.0 |
 | afterClose | Called when close animation is finished | () => void | - |  |
 | banner | Whether to show as banner | boolean | false |  |
-| closable | The config of closable, >=5.15.0: support `aria-*` | boolean \| ({ closeIcon?: React.ReactNode } & React.AriaAttributes) | `false` |  |
+| closable | The config of closable, >=5.15.0: support `aria-*` | boolean \| `({ closeIcon?: React.ReactNode } & React.AriaAttributes)` | `false` |  |
 | description | Additional content of Alert | ReactNode | - |  |
 | icon | Custom icon, effective when `showIcon` is true | ReactNode | - |  |
 | message | Content of Alert | ReactNode | - |  |
@@ -46,10 +46,10 @@ Common props ref：[Common props](/docs/react/common-props)
 
 | Property    | Description                      | Type      | Default           | Version |
 | ----------- | -------------------------------- | --------- | ----------------- | ------- |
-| description | Custom error description to show | ReactNode | {{ error stack }} |         |
-| message     | Custom error message to show     | ReactNode | {{ error }}       |         |
+| description | Custom error description to show | ReactNode | `{{ error stack }}` |         |
+| message     | Custom error message to show     | ReactNode | `{{ error }}`       |         |
 
 ## Design Token
 
-<ComponentTokenTable component="Alert"></ComponentTokenTable>
+``` <ComponentTokenTable component="Alert"></ComponentTokenTable>
 

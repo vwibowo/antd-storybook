@@ -1,5 +1,5 @@
 
-import { Canvas, Meta,Source } from '@storybook/blocks';
+import { Canvas, Meta, Source } from '@storybook/blocks';
 import * as ListStories from './List.stories';
 
 <Meta of={ListStories} />
@@ -32,14 +32,14 @@ Common props ref：[Common props](/docs/react/common-props)
 | Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
 | bordered | Toggles rendering of the border around the list | boolean | false |  |
-| dataSource | DataSource array for list | any\[] | - |  |
+| dataSource | DataSource array for list | any[] | - |  |
 | footer | List footer renderer | ReactNode | - |  |
-| grid | The grid type of list. You can set grid to something like {gutter: 16, column: 4} | [object](#list-grid-props) | - |  |
+| grid | The grid type of list. You can set grid to something like \{gutter: 16, column: 4} | [object](#list-grid-props) | - |  |
 | header | List header renderer | ReactNode | - |  |
 | itemLayout | The layout of list | `horizontal` \| `vertical` | `horizontal` |  |
 | loading | Shows a loading indicator while the contents of the list are being fetched | boolean \| [SpinProps](/components/spin/#api) ([more](https://github.com/ant-design/ant-design/issues/8659)) | false |  |
 | loadMore | Shows a load more content | ReactNode | - |  |
-| locale | The i18n text including empty text | object | {emptyText: `No Data`} |  |
+| locale | The i18n text including empty text | object | \{emptyText: `No Data`} |  |
 | pagination | Pagination [config](/components/pagination/), hide it by setting it to false | boolean \| object | false |  |
 | renderItem | Customize list item when using `dataSource` | (item) => ReactNode | - |  |
 | rowKey | Item's unique value, could be an Item's key which holds a unique value of type `React.Key` or function that receives Item and returns a `React.Key` | `keyof` T \| (item: T) => `React.Key` | `"key"` |  |
@@ -93,5 +93,5 @@ More about pagination, please check [`Pagination`](/components/pagination/).
 
 ## Design Token
 
-<ComponentTokenTable component="List"></ComponentTokenTable>
+``` <ComponentTokenTable component="List"></ComponentTokenTable>
 

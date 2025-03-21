@@ -1,5 +1,5 @@
 
-import { Canvas, Meta,Source } from '@storybook/blocks';
+import { Canvas, Meta, Source } from '@storybook/blocks';
 import * as TimelineStories from './Timeline.stories';
 
 <Meta of={TimelineStories} />
@@ -10,10 +10,6 @@ import * as TimelineStories from './Timeline.stories';
 - When a series of information needs to be ordered by time (ascending or descending).
 - When you need a timeline to make a visual connection.
 
-:::info{title="Upgrade Tip"}
-After version 5.2.0, we provide a simpler usage `<Timeline items={[...]} />` with better performance and potential of writing simpler code style in your applications.
-Meanwhile, we deprecated the old usage in browser console, we will remove it in antd 6.0.
-:::
 
 ```jsx
 // works when >=5.2.0, recommended ✅
@@ -68,5 +64,5 @@ Node of timeline.
 
 ## Design Token
 
-<ComponentTokenTable component="Timeline"></ComponentTokenTable>
+``` <ComponentTokenTable component="Timeline"></ComponentTokenTable>
 

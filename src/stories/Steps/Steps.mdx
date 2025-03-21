@@ -1,5 +1,5 @@
 
-import { Canvas, Meta,Source } from '@storybook/blocks';
+import { Canvas, Meta, Source } from '@storybook/blocks';
 import * as StepsStories from './Steps.stories';
 
 <Meta of={StepsStories} />
@@ -47,7 +47,7 @@ The whole of the step bar.
 | initial | Set the initial step, counting from 0 | number | 0 |  |
 | labelPlacement | Place title and description with `horizontal` or `vertical` direction | string | `horizontal` |  |
 | percent | Progress circle percentage of current step in `process` status (only works on basic Steps) | number | - | 4.5.0 |
-| progressDot | Steps with progress dot style, customize the progress dot by setting it to a function. labelPlacement will be `vertical` | boolean \| (iconDot, {index, status, title, description}) => ReactNode | false |  |
+| progressDot | Steps with progress dot style, customize the progress dot by setting it to a function. labelPlacement will be `vertical` | boolean \| (iconDot, \{index, status, title, description}) => ReactNode | false |  |
 | responsive | Change to vertical direction when screen width smaller than `532px` | boolean | true |  |
 | size | To specify the size of the step bar, `default` and `small` are currently supported | string | `default` |  |
 | status | To specify the status of current step, can be set to one of the following values: `wait` `process` `finish` `error` | string | `process` |  |
@@ -81,5 +81,5 @@ A single step in the step bar.
 
 ## Design Token
 
-<ComponentTokenTable component="Steps"></ComponentTokenTable>
+``` <ComponentTokenTable component="Steps"></ComponentTokenTable>
 

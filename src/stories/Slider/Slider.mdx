@@ -1,5 +1,5 @@
 
-import { Canvas, Meta,Source } from '@storybook/blocks';
+import { Canvas, Meta, Source } from '@storybook/blocks';
 import * as SliderStories from './Slider.stories';
 
 <Meta of={SliderStories} />
@@ -32,19 +32,19 @@ Common props ref：[Common props](/docs/react/common-props)
 | Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
 | autoFocus | Whether get focus when component mounted | boolean | false |  |
-| classNames | Semantic structure className | [Record<SemanticDOM, string>](#semantic-dom) | - | 5.10.0 |
+| classNames | Semantic structure className | [Record\<SemanticDOM, string>](#semantic-dom) | - | 5.10.0 |
 | defaultValue | The default value of slider. When `range` is false, use number, otherwise, use \[number, number] | number \| \[number, number] | 0 \| \[0, 0] |  |
 | disabled | If true, the slider will not be intractable | boolean | false |  |
 | keyboard | Support using keyboard to move handlers | boolean | true | 5.2.0+ |
 | dots | Whether the thumb can drag over tick only | boolean | false |  |
 | included | Make effect when `marks` not null, true means containment and false means coordinative | boolean | true |  |
-| marks | Tick mark of Slider, type of key must be `number`, and must in closed interval \[min, max], each mark can declare its own style | object | { number: ReactNode } \| { number: { style: CSSProperties, label: ReactNode } } |  |
+| marks | Tick mark of Slider, type of key must be `number`, and must in closed interval \[min, max], each mark can declare its own style | object | \{ number: ReactNode } \| \{ number: \{ style: CSSProperties, label: ReactNode } } |  |
 | max | The maximum value the slider can slide to | number | 100 |  |
 | min | The minimum value the slider can slide to | number | 0 |  |
 | range | Dual thumb mode | boolean | false |  |
 | reverse | Reverse the component | boolean | false |  |
 | step | The granularity the slider can step through values. Must greater than 0, and be divided by (max - min) . When `step` is `null` but exist `marks`, the valid point will only be the `mark`, `min` and `max` | number \| null | 1 |  |
-| styles | Semantic structure style | [Record<SemanticDOM, React.CSSProperties>](#semantic-dom) | - | 5.10.0 |
+| styles | Semantic structure style | [Record\<SemanticDOM, React.CSSProperties>](#semantic-dom) | - | 5.10.0 |
 | tooltip | The tooltip relate props | [tooltip](#tooltip) | - | 4.23.0 |
 | value | The value of slider. When `range` is false, use number, otherwise, use \[number, number] | number \| \[number, number] | - |  |
 | vertical | If true, the slider will be vertical | boolean | false |  |
@@ -83,5 +83,5 @@ Common props ref：[Common props](/docs/react/common-props)
 
 ## Design Token
 
-<ComponentTokenTable component="Slider"></ComponentTokenTable>
+``` <ComponentTokenTable component="Slider"></ComponentTokenTable>
 

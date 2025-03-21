@@ -1,5 +1,5 @@
 
-import { Canvas, Meta,Source } from '@storybook/blocks';
+import { Canvas, Meta, Source } from '@storybook/blocks';
 import * as AutoCompleteStories from './AutoComplete.stories';
 
 <Meta of={AutoCompleteStories} />
@@ -36,7 +36,7 @@ Common props ref：[Common props](/docs/react/common-props)
 
 | Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
-| allowClear | Show clear button | boolean \| { clearIcon?: ReactNode } | false | 5.8.0: Support Object type |
+| allowClear | Show clear button | boolean \| \{ clearIcon?: ReactNode } | false | 5.8.0: Support Object type |
 | autoFocus | If get focus when component mounted | boolean | false |  |
 | backfill | If backfill selected item the input when using keyboard | boolean | false |  |
 | children (for customize input element) | Customize input element | HTMLInputElement \| HTMLTextAreaElement \| React.ReactElement&lt;InputProps> | &lt;Input /> |  |
@@ -52,7 +52,7 @@ Common props ref：[Common props](/docs/react/common-props)
 | getPopupContainer | Parent node of the dropdown. Default to body, if you encountered positioning problems during scroll, try changing to the scrollable area and position relative to it. [Example](https://codesandbox.io/s/4j168r7jw0) | function(triggerNode) | () => document.body |  |
 | notFoundContent | Specify content to show when no result matches | ReactNode | - |  |
 | open | Controlled open state of dropdown | boolean | - |  |
-| options | Select options. Will get better perf than jsx definition | { label, value }\[] | - |  |
+| options | Select options. Will get better perf than jsx definition | \{ label, value }\[\] | - |  |
 | placeholder | The placeholder of input | string | - |  |
 | status | Set validation status | 'error' \| 'warning' | - | 4.19.0 |
 | size | The size of the input box | `large` \| `middle` \| `small` | - |  |
@@ -78,7 +78,7 @@ Common props ref：[Common props](/docs/react/common-props)
 
 ## Design Token
 
-<ComponentTokenTable component="Select"></ComponentTokenTable>
+``` <ComponentTokenTable component="Select"></ComponentTokenTable>
 
 ## FAQ
 

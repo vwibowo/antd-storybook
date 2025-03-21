@@ -1,5 +1,5 @@
 
-import { Canvas, Meta,Source } from '@storybook/blocks';
+import { Canvas, Meta, Source } from '@storybook/blocks';
 import * as ImageStories from './Image.stories';
 
 <Meta of={ImageStories} />
@@ -62,10 +62,10 @@ Other attributes [&lt;img>](https://developer.mozilla.org/en-US/docs/Web/HTML/El
 | maxScale | Max scale | number | 50 | 5.7.0 |
 | closeIcon | Custom close icon | React.ReactNode | - | 5.7.0 |
 | forceRender | Force render preview dialog | boolean | - | - |
-| toolbarRender | Custom toolbar render | (originalNode: React.ReactElement, info: Omit<[ToolbarRenderInfoType](#toolbarrenderinfotype), 'current' \| 'total'>) => React.ReactNode | - | 5.7.0, `info.image`: 5.18.0 |
-| imageRender | Custom preview content | (originalNode: React.ReactElement, info: { transform: [TransformType](#transformtype), image: [ImgInfo](#imginfo) }) => React.ReactNode | - | 5.7.0, image: 5.18.0 |
+| toolbarRender | Custom toolbar render | (originalNode: React.ReactElement, info: Omit\<[ToolbarRenderInfoType](#toolbarrenderinfotype), 'current' \| 'total'>) => React.ReactNode | - | 5.7.0, `info.image`: 5.18.0 |
+| imageRender | Custom preview content | (originalNode: React.ReactElement, info: \{ transform: [TransformType](#transformtype), image: [ImgInfo](#imginfo) }) => React.ReactNode | - | 5.7.0, image: 5.18.0 |
 | destroyOnClose | Destroy child elements when closing preview | boolean | false |  |
-| onTransform | Callback when the transform of image changed | { transform: [TransformType](#transformtype), action: [TransformAction](#transformaction) } | - | 5.7.0 |
+| onTransform | Callback when the transform of image changed | \{ transform: [TransformType](#transformtype), action: [TransformAction](#transformaction) } | - | 5.7.0 |
 | onVisibleChange | Callback when `visible` changed | (visible: boolean, prevVisible: boolean) => void | - | - |
 
 ## PreviewGroup
@@ -73,7 +73,7 @@ Other attributes [&lt;img>](https://developer.mozilla.org/en-US/docs/Web/HTML/El
 | Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
 | preview | Preview config, `disabled` when false | boolean \| [PreviewGroupType](#previewgrouptype) | true | 4.6.0 [PreviewGroupType](#previewgrouptype):4.7.0 |
-| items | Preview items | string[] \| { src: string, crossOrigin: string, ... }[] | - | 5.7.0 |
+| items | Preview items | string[] \| \{ src: string, crossOrigin: string, ... }[] | - | 5.7.0 |
 | fallback | Load failure fault-tolerant src | string | - | 5.7.0 |
 
 ### PreviewGroupType
@@ -94,8 +94,8 @@ Other attributes [&lt;img>](https://developer.mozilla.org/en-US/docs/Web/HTML/El
 | forceRender | Force render preview dialog | boolean | - | - |
 | countRender | Custom preview count content | (current: number, total: number) => React.ReactNode | - | 4.20.0 |
 | toolbarRender | Custom toolbar render | (originalNode: React.ReactElement, info: [ToolbarRenderInfoType](#toolbarrenderinfotype)) => React.ReactNode | - | 5.7.0, `info.image`: 5.18.0 |
-| imageRender | Custom preview content | (originalNode: React.ReactElement, info: { transform: [TransformType](#transformtype), image: [ImgInfo](#imginfo), current: number }) => React.ReactNode | - | 5.7.0, image: 5.18.0 |
-| onTransform | Callback when the transform of image changed | { transform: [TransformType](#transformtype), action: [TransformAction](#transformaction) } | - | 5.7.0 |
+| imageRender | Custom preview content | (originalNode: React.ReactElement, info: \{ transform: [TransformType](#transformtype), image: [ImgInfo](#imginfo), current: number }) => React.ReactNode | - | 5.7.0, image: 5.18.0 |
+| onTransform | Callback when the transform of image changed | \{ transform: [TransformType](#transformtype), action: [TransformAction](#transformaction) } | - | 5.7.0 |
 | onChange | Callback when switch preview image | (current: number, prevCurrent: number) => void | - | 5.3.0 |
 | onVisibleChange | Callback when `visible` changed | (visible: boolean, prevVisible: boolean, current: number) => void | - | current Property 5.3.0 |
 
@@ -175,5 +175,5 @@ type TransformAction =
 
 ## Design Token
 
-<ComponentTokenTable component="Image"></ComponentTokenTable>
+``` <ComponentTokenTable component="Image"></ComponentTokenTable>
 

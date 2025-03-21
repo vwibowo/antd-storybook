@@ -1,5 +1,5 @@
 
-import { Canvas, Meta,Source } from '@storybook/blocks';
+import { Canvas, Meta, Source } from '@storybook/blocks';
 import * as TableStories from './Table.stories';
 
 <Meta of={TableStories} />
@@ -131,7 +131,7 @@ Common props ref：[Common props](/docs/react/common-props)
 | rowHoverable | Row hover | boolean | true | 5.16.0 |
 | scroll | Whether the table can be scrollable, [config](#scroll) | object | - |  |
 | showHeader | Whether to show table header | boolean | true |  |
-| showSorterTooltip | The header show next sorter direction tooltip. It will be set as the property of Tooltip if its type is object | boolean \| [Tooltip props](/components/tooltip/#api) & `{target?: 'full-header' \| 'sorter-icon' }` | { target: 'full-header' } | 5.16.0 |
+| showSorterTooltip | The header show next sorter direction tooltip. It will be set as the property of Tooltip if its type is object | boolean \| [Tooltip props](/components/tooltip/#api) & `{target?: 'full-header' \| 'sorter-icon' }` | \{ target: 'full-header' } | 5.16.0 |
 | size | Size of table | `large` \| `middle` \| `small` | `large` |  |
 | sortDirections | Supported sort way, could be `ascend`, `descend` | Array | \[`ascend`, `descend`] |  |
 | sticky | Set sticky header and scroll bar | boolean \| `{offsetHeader?: number, offsetScroll?: number, getContainer?: () => HTMLElement}` | - | 4.6.0 (getContainer: 4.7.0) |
@@ -139,7 +139,7 @@ Common props ref：[Common props](/docs/react/common-props)
 | tableLayout | The [table-layout](https://developer.mozilla.org/en-US/docs/Web/CSS/table-layout) attribute of table element | - \| `auto` \| `fixed` | -<hr />`fixed` when header/columns are fixed, or using `column.ellipsis` |  |
 | title | Table title renderer | function(currentPageData) | - |  |
 | virtual | Support virtual list | boolean | - | 5.9.0 |
-| onChange | Callback executed when pagination, filters or sorter is changed | function(pagination, filters, sorter, extra: { currentDataSource: \[], action: `paginate` \| `sort` \| `filter` }) | - |  |
+| onChange | Callback executed when pagination, filters or sorter is changed | function(pagination, filters, sorter, extra: \{ currentDataSource: \[], action: `paginate` \| `sort` \| `filter` }) | - |  |
 | onHeaderRow | Set props on per header row | function(columns, index) | - |  |
 | onRow | Set props on per row | function(record, index) | - |  |
 | onScroll | Triggered when the table body is scrolled. Note that only vertical scrolling will trigger the event when `virtual` | function(event) | - | 5.16.0 |
@@ -149,7 +149,7 @@ Common props ref：[Common props](/docs/react/common-props)
 | Property | Description | Type | Version |
 | --- | --- | --- | --- |
 | nativeElement | The wrap element | HTMLDivElement | 5.11.0 |
-| scrollTo | Trigger to scroll to target position. `key` match with record `rowKey` | (config: { index?: number, key?: React.Key, top?: number }) => void | 5.11.0 |
+| scrollTo | Trigger to scroll to target position. `key` match with record `rowKey` | (config: \{ index?: number, key?: React.Key, top?: number }) => void | 5.11.0 |
 
 #### onRow usage
 
@@ -187,7 +187,7 @@ One of the Table `columns` prop for describing the table's columns, Column has t
 | defaultFilteredValue | Default filtered values | string\[] | - |  |
 | filterResetToDefaultFilteredValue | click the reset button, whether to restore the default filter | boolean | false |  |
 | defaultSortOrder | Default order of sorted values | `ascend` \| `descend` | - |  |
-| ellipsis | The ellipsis cell content, not working with sorter and filters for now.<br />tableLayout would be `fixed` when `ellipsis` is `true` or `{ showTitle?: boolean }` | boolean \| {showTitle?: boolean } | false | showTitle: 4.3.0 |
+| ellipsis | The ellipsis cell content, not working with sorter and filters for now.<br />tableLayout would be `fixed` when `ellipsis` is `true` or `{ showTitle?: boolean }` | boolean \| \{showTitle?: boolean } | false | showTitle: 4.3.0 |
 | filterDropdown | Customized filter overlay | ReactNode \| (props: [FilterDropdownProps](https://github.com/ant-design/ant-design/blob/ecc54dda839619e921c0ace530408871f0281c2a/components/table/interface.tsx#L79)) => ReactNode | - |  |
 | filtered | Whether the `dataSource` is filtered | boolean | false |  |
 | filteredValue | Controlled filtered value, filter icon will highlight | string\[] | - |  |
@@ -204,12 +204,12 @@ One of the Table `columns` prop for describing the table's columns, Column has t
 | responsive | The list of breakpoints at which to display this column. Always visible if not set | [Breakpoint](https://github.com/ant-design/ant-design/blob/015109b42b85c63146371b4e32b883cf97b088e8/components/_util/responsiveObserve.ts#L1)\[] | - | 4.2.0 |
 | rowScope | Set scope attribute for all cells in this column | `row` \| `rowgroup` | - | 5.1.0 |
 | shouldCellUpdate | Control cell render logic | (record, prevRecord) => boolean | - | 4.3.0 |
-| showSorterTooltip | If header show next sorter direction tooltip, override `showSorterTooltip` in table | boolean \| [Tooltip props](/components/tooltip/) & `{target?: 'full-header' \| 'sorter-icon' }` | { target: 'full-header' } | 5.16.0 |
-| sortDirections | Supported sort way, override `sortDirections` in `Table`, could be `ascend`, `descend` | Array | \[`ascend`, `descend`] |  |
-| sorter | Sort function for local sort, see [Array.sort](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)'s compareFunction. If it is server-side sorting, set to `true`, but if you want to support multi-column sorting, you can set it to `{ multiple: number }` | function \| boolean \| { compare: function, multiple: number } | - |  |
+| showSorterTooltip | If header show next sorter direction tooltip, override `showSorterTooltip` in table | boolean \| [Tooltip props](/components/tooltip/) & `{target?: 'full-header' \| 'sorter-icon' }` | \{ target: 'full-header' } | 5.16.0 |
+| sortDirections | Supported sort way, override `sortDirections` in `Table`, could be `ascend`, `descend` | Array | [`ascend`, `descend`] |  |
+| sorter | Sort function for local sort, see [Array.sort](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)'s compareFunction. If it is server-side sorting, set to `true`, but if you want to support multi-column sorting, you can set it to `{ multiple: number }` | function \| boolean \| \{ compare: function, multiple: number } | - |  |
 | sortOrder | Order of sorted values: `ascend` `descend` `null` | `ascend` \| `descend` \| null | - |  |
-| sortIcon | Customized sort icon | (props: { sortOrder }) => ReactNode | - | 5.6.0 |
-| title | Title of this column | ReactNode \| ({ sortOrder, sortColumn, filters }) => ReactNode | - |  |
+| sortIcon | Customized sort icon | (props: \{ sortOrder }) => ReactNode | - | 5.6.0 |
+| title | Title of this column | ReactNode \| (\{ sortOrder, sortColumn, filters }) => ReactNode | - |  |
 | width | Width of this column ([width not working?](https://github.com/ant-design/ant-design/issues/13825#issuecomment-449889241)) | string \| number | - |  |
 | minWidth | Min width of this column, only works when `tableLayout="auto"` | number | - | 5.21.0 |
 | hidden | Hidden this column | boolean | false | 5.13.0 |
@@ -243,9 +243,9 @@ Properties for expandable.
 | columnTitle | Set the title of the expand column | ReactNode | - | 4.23.0 |
 | columnWidth | Set the width of the expand column | string \| number | - |  |
 | defaultExpandAllRows | Expand all rows initially | boolean | false |  |
-| defaultExpandedRowKeys | Initial expanded row keys | string\[] | - |  |
+| defaultExpandedRowKeys | Initial expanded row keys | string[] | - |  |
 | expandedRowClassName | Expanded row's className | string \| (record, index, indent) => string | - | string: 5.22.0 |
-| expandedRowKeys | Current expanded row keys | string\[] | - |  |
+| expandedRowKeys | Current expanded row keys | string[] | - |  |
 | expandedRowRender | Expanded container render for each row | function(record, index, indent, expanded): ReactNode | - |  |
 | expandIcon | Customize row expand Icon. Ref [example](https://codesandbox.io/s/fervent-bird-nuzpr) | function(props): ReactNode | - |  |
 | expandRowByClick | Whether to expand row by clicking anywhere in the whole row | boolean | false |  |
@@ -270,11 +270,11 @@ Properties for row selection.
 | hideSelectAll | Hide the selectAll checkbox and custom selection | boolean | false | 4.3.0 |
 | preserveSelectedRowKeys | Keep selection `key` even when it removed from `dataSource` | boolean | - | 4.4.0 |
 | renderCell | Renderer of the table cell. Same as `render` in column | function(checked, record, index, originNode) {} | - | 4.1.0 |
-| selectedRowKeys | Controlled selected row keys | string\[] \| number\[] | \[] |  |
-| selections | Custom selection [config](#selection), only displays default selections when set to `true` | object\[] \| boolean | - |  |
+| selectedRowKeys | Controlled selected row keys | string[] \| number[] | [] |  |
+| selections | Custom selection [config](#selection), only displays default selections when set to `true` | object[] \| boolean | - |  |
 | type | `checkbox` or `radio` | `checkbox` \| `radio` | `checkbox` |  |
 | onCell | Set props on per cell. Same as `onCell` in column | function(record, rowIndex) | - | 5.5.0 |
-| onChange | Callback executed when selected rows change | function(selectedRowKeys, selectedRows, info: { type }) | - | `info.type`: 4.21.0 |
+| onChange | Callback executed when selected rows change | function(selectedRowKeys, selectedRows, info: \{ type }) | - | `info.type`: 4.21.0 |
 | onSelect | Callback executed when select/deselect one row | function(record, selected, selectedRows, nativeEvent) | - |  |
 | onSelectAll | Callback executed when select/deselect all rows | function(selected, selectedRows, changeRows) | - |  |
 | onSelectInvert | Callback executed when row selection is inverted | function(selectedRowKeys) | - |  |
@@ -341,7 +341,7 @@ Here is the [CodeSandbox for TypeScript](https://codesandbox.io/s/serene-platfor
 
 ## Design Token
 
-<ComponentTokenTable component="Table"></ComponentTokenTable>
+``` <ComponentTokenTable component="Table"></ComponentTokenTable>
 
 ## Note
 
