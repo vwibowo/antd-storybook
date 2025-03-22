@@ -56,8 +56,12 @@ for (const ui of uiKeys) {
         const template = `
 import type { Meta, StoryObj } from '@storybook/react';
 import { ${ui} } from 'antd';
+import WrapperPreview from "../WrapperPreview";
 ${demos.map(d => {
-            return `import Demo${PascalCase(d)}Comp from "./${d}";`
+            return `
+import Demo${PascalCase(d)}Comp from "./${d}";
+import sourceDemo${PascalCase(d)} from "./${d}?raw";
+            `
         }).join("\n")}
 
 const meta = {
@@ -71,47 +75,47 @@ type Story = StoryObj<any>;
 ${demos.map(d => {
             return `
 export const Demo_${lodash.camelCase(d)}: Story = {
-  render: (p:any) => <Demo${PascalCase(d)}Comp {...p} />
+  render: (p:any) => <WrapperPreview code={sourceDemo${PascalCase(d)}}><Demo${PascalCase(d)}Comp {...p} /></WrapperPreview>
 };`
         }).join("\n")}
 `
         // @ts-ignore
         await Bun.write(`${dirPath}/${ui}/${ui}.stories.tsx`, template);
 
-        // index.en-US.md
-        // @ts-ignore
-        const mdContent = await Bun.file(`/Users/vinensius.wibowo/Code/ant-design/${lodash.kebabCase(ui)}/index.en-US.md`).text();
-        let newTxt = `
-import { Canvas, Meta,Source } from '@storybook/blocks';
-import * as ${ui}Stories from './${ui}.stories';
+        //         // index.en-US.md
+        //         // @ts-ignore
+        //         const mdContent = await Bun.file(`/Users/vinensius.wibowo/Code/ant-design/${lodash.kebabCase(ui)}/index.en-US.md`).text();
+        //         let newTxt = `
+        // import { Canvas, Meta,Source } from '@storybook/blocks';
+        // import * as ${ui}Stories from './${ui}.stories';
 
-<Meta of={${ui}Stories} />
+        // <Meta of={${ui}Stories} />
 
-        `;
-        let header = false;
-        mdContent.split("\n").forEach((d: any) => {
-            if (!header && d.trim() === "---") {
-                header = true;
-                return;
-            }
-            if (header && d.trim() === "---") {
-                header = false;
-                return;
-            }
-            if (d.trim().startsWith("<!--")) {
-                return;
-            }
+        //         `;
+        //         let header = false;
+        //         mdContent.split("\n").forEach((d: any) => {
+        //             if (!header && d.trim() === "---") {
+        //                 header = true;
+        //                 return;
+        //             }
+        //             if (header && d.trim() === "---") {
+        //                 header = false;
+        //                 return;
+        //             }
+        //             if (d.trim().startsWith("<!--")) {
+        //                 return;
+        //             }
 
-            if (d.trim().includes("<https://") || d.trim().includes(" http://")) {
-                return;
-            }
-            if (!header) {
-                newTxt += d + "\n";
-            }
-        })
-        // @ts-ignore
-        await Bun.write(`${dirPath}/${ui}/${ui}.mdx`, newTxt);
-        console.log(newTxt);
+        //             if (d.trim().includes("<https://") || d.trim().includes(" http://")) {
+        //                 return;
+        //             }
+        //             if (!header) {
+        //                 newTxt += d + "\n";
+        //             }
+        //         })
+        //         // @ts-ignore
+        //         await Bun.write(`${dirPath}/${ui}/${ui}.mdx`, newTxt);
+        // console.log(newTxt);
 
     } catch (error) {
         console.log(error)

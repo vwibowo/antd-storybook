@@ -3,4 +3,6 @@ import yourTheme from './theme';
 
 addons.setConfig({
     theme: yourTheme,
+    options: { showPanel: false },
+
 });

@@ -3,12 +3,12 @@ import { create } from '@storybook/theming/create';
 export default create({
     base: 'light',
     // Typography
-    fontBase: '"Open Sans", sans-serif',
-    fontCode: 'monospace',
+    // fontBase: '"Open Sans", sans-serif',
+    // fontCode: 'monospace',
 
     brandTitle: 'My custom Storybook',
-    brandUrl: 'https://example.com',
-    brandImage: 'https://storybook.js.org/images/placeholders/350x150.png',
+    // brandUrl: 'https://example.com',
+    // brandImage: 'https://storybook.js.org/images/placeholders/350x50.png',
     brandTarget: '_self',
 
     //
